@@ -33,7 +33,7 @@ const Signin = () => {
 
     try {
       // Request OTP
-      await axios.post('http://localhost:5000/api/signin', formData, {
+      await axios.post('https://clothing-store-xyw8.onrender.com/api/signin', formData, {
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ const Signin = () => {
     setSuccess(''); // Reset success
 
     try {
-      const response = await axios.post('http://localhost:5000/api/verify', { email: formData.email, otp }, {
+      const response = await axios.post('https://clothing-store-xyw8.onrender.com/api/verify', { email: formData.email, otp }, {
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json',

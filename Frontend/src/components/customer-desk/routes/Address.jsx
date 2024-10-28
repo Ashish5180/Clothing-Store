@@ -31,7 +31,7 @@ function Address() {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/address", {
+      await axios.post("https://clothing-store-xyw8.onrender.com/api/address", {
         ...address, // Spread the address object
         userId, // Include the userId
       });

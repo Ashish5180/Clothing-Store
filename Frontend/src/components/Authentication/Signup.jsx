@@ -38,7 +38,7 @@ const Signup = () => {
     setSuccess(''); // Reset success
 
     try {
-      const response = await axios.post('http://localhost:5000/signUp', formData, {
+      const response = await axios.post('https://clothing-store-xyw8.onrender.com/signUp', formData, {
         withCredentials: true, 
         headers: {
         'Content-Type': 'application/json',
