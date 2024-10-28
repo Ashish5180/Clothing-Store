@@ -24,7 +24,7 @@ const Cart = () => {
     const fetchUserAddress = async () => {
       if (userId) {
         try {
-          const response = await axios.get("https://clothing-store-xyw8.onrender.com/api/address", {
+          const response = await axios.get("http://localhost:5000/api/address", {
             params: { userId },
           });
           if (response.data) {
@@ -79,7 +79,7 @@ const Cart = () => {
     };
   
     try {
-      const response = await axios.post('https://clothing-store-xyw8.onrender.com/api/orders', orderDetails, {
+      const response = await axios.post('http://localhost:5000/api/orders', orderDetails, {
         headers: {
           'Content-Type': 'application/json',
         },

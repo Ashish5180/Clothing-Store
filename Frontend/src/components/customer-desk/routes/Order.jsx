@@ -15,7 +15,7 @@ const UserOrders = ({ userId }) => {
             const userid = JSON.parse(localStorage.getItem("user"));
             const userId = userid.user.id;
             try {
-                const response = await axios.get(`https://clothing-store-xyw8.onrender.com/api/orders/${userId}`);
+                const response = await axios.get(`http://localhost:5000/api/orders/${userId}`);
                 setOrders(response.data);
             } catch (err) {
                 setError('Failed to fetch orders');
@@ -29,7 +29,7 @@ const UserOrders = ({ userId }) => {
 
     const handleCancelOrder = async () => {
         try {
-            await axios.put(`https://clothing-store-xyw8.onrender.com/api/orders/${selectedOrderId}/cancel`);
+            await axios.put(`http://localhost:5000/api/orders/${selectedOrderId}/cancel`);
             setOrders(prevOrders => 
                 prevOrders.map(order => 
                     order._id === selectedOrderId ? { ...order, status: 'Cancelled' } : order
@@ -44,7 +44,7 @@ const UserOrders = ({ userId }) => {
 
     const handleReturnAndReplace = async (orderId) => {
         try {
-            await axios.put(`https://clothing-store-xyw8.onrender.com/api/orders/${orderId}/return`);
+            await axios.put(`http://localhost:5000/api/orders/${orderId}/return`);
             setOrders(prevOrders =>
                 prevOrders.map(order =>
                     order._id === orderId ? { ...order, status: 'Return Initiated' } : order

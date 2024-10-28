@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 // Connection URI
-const uri = "mongodb+srv://Ecom:ashish5180@cluster0.y5pka.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb://localhost:27017/ClothingStore";
 
 // Function to connect to MongoDB
 const connectToDatabase = async () => {
